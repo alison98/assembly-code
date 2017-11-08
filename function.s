@@ -114,22 +114,27 @@ setvalues:
 	li $v0, 4
 	syscall
 
+	#print "B is at "
 	la $a0, str1
 	li $v0, 4
 	syscall
 
+	#print pointer to b
 	move $a0, $a1
 	li $v0, 1
 	syscall
 
+	#print ", and contains "
 	la $a0, str2
 	li $v0, 4
 	syscall
 
+	#print b
 	move $a0, $s1
 	li $v0, 1
 	syscall
 
+	#pop s0 and s1 off stack
 	lw $s1, 4($sp)
 	lw $s0, 0($sp)
 	addi $sp, $sp, 8
